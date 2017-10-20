@@ -173,7 +173,8 @@ def load_json_results_list(results_filename):
     return results_list
 
 # Method that can be overloaded to load a different kind of results
-load_results_list = load_json_results_list
+_load_results_list = load_json_results_list
+_results_file_extension = ".json"
 
 
 def load_scene_data(poseut, ground_truth_filename : str, results_list):
@@ -217,12 +218,12 @@ def load_scene_data(poseut, ground_truth_filename : str, results_list):
 
 
 def load_dataset_scenes_data(poseut, ground_truth_foldername: str, results_foldername : str, decimation_factor = 1):
-    """ Load ground truth results associated with each results from a dataset. """
-    """ Different file formats for results may be considered may be modified by overloading the load_results_list method. """    
-    """ Decimation factor :  consider only 1 out of decimation_factor results for quick tests. """  
+    """ Load ground truth results associated with each results from a dataset.\n
+    Decimation factor :  consider only (1 out of decimation_factor) results for quick tests.
+    Different file formats for results may be considered by reassigning the _load_results_list method and _results_file_extension variable. """
     scenes_data = {}
     
-    names =  [name for name in os.listdir(results_foldername) if os.path.splitext(name)[1] == ".txt"]
+    names =  [name for name in os.listdir(results_foldername) if os.path.splitext(name)[1] == _results_file_extension]
     if decimation_factor > 1:
         names = names[::decimation_factor]
     for result_name in names:
@@ -230,7 +231,7 @@ def load_dataset_scenes_data(poseut, ground_truth_foldername: str, results_folde
         result_filename = os.path.join(results_foldername, result_name)
         ground_truth_filename = os.path.join(ground_truth_foldername, scene_name + ".json")
         assert(os.path.isfile(ground_truth_filename))
-        results_list = load_results_list(result_filename)
+        results_list = _load_results_list(result_filename)
         scene_data = load_scene_data(poseut, ground_truth_filename, results_list)
         scenes_data[scene_name] = scene_data
     return scenes_data

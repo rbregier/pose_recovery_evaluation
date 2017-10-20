@@ -30,19 +30,17 @@ import poseutils
 
 if __name__ == "__main__":
     # Ground truth folder
-    ground_truth_foldername = "datasets/bunny_sample/gt"
-    
+    ground_truth_foldername = "datasets/bunny_sample/gt"    
     # File describing object's geometry considered to estimate distance between poses
     poseutils_filename = "datasets/bunny_sample/poseutils.json"
-
     # Folder in which are stored results of object detection and pose estimation    
-    results_foldername = "experiments/bunny_sample_results"
-    
-    #    
+    results_foldername = "experiments/bunny_sample_results"    
+    # Maximum occlusion rate of an instance to be considered of interest for pose recovery
     max_occlusion_rate = 0.5
     # Maximum number of results considered per scene, <0 means for no limitation. 
     max_nb_results = -1    
     
+    ########        
     
     # Load utils class to deal with poses of this object
     poseut = poseutils.PoseUtils.load_from_file(poseutils_filename)
