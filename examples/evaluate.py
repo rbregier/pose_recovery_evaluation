@@ -14,6 +14,11 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+
+
+# In this file, we illustrate the evaluation of some results on a given dataset.
+
+
 import matplotlib.pyplot as plt
 
 import sys

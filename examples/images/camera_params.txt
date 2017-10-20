@@ -1,0 +1,10 @@
+width	1296
+height	1024
+fu	4507.08
+fv	4507.08
+cu	399.557
+cv	556.6
+clip_start	0.76295
+clip_end	0.929367
+location	0	0	0
+rotation	1	0	0	0
