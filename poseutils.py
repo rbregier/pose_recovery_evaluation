@@ -46,6 +46,15 @@ class PoseUtils:
                                             Rref2i = parsed['Rref2i'],
                                             tref2i = parsed['tref2i'],
                                             distance_threshold = parsed['distance_threshold'])
+                                            
+    def distance(self, R1, t1, R2, t2):
+        reprs1 = self.get_representatives(R1, t1)
+        reprs2 = self.get_representatives(R2, t2)
+        assert(len(reprs1) > 0)
+        r1 = reprs1[0]
+        d = min([np.linalg.norm(r2 - r1) for r2 in reprs2])
+        return d
+        
 
     def _to_dict(self):
         d = {}
