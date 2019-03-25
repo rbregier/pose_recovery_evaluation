@@ -13,13 +13,6 @@ See the *examples* folder for typical use.
 Results to evaluate are expected to be stored in JSON format for each scene such as illustrated in *examples/experiences*, and to consist in a list of pose hypothesis described by a rigid transformation ("R", "t") and a confidence score "score".
 Other format may be used by providing a proper overloading the *_load_results_list* and *_results_file_extension* variables contained in *evaluation_tools.py*.
 
-## Potential additional features
-This toolbox can be improved.
-Please feel free to contact me through GitHub or by email [2] for more information, feature requests, etc.
-We want this repository to be useful for the community, and may provide additional tools is there is a demand.
-Pull requests are welcome.
-
-
 ## Dependencies
 Python 3+, Matplotlib, Numpy.
 
