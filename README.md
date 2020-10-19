@@ -10,7 +10,7 @@ This toolbox has been primarily designed for use with the [Siléane Dataset](htt
 See the *examples* folder for typical use.
 
 ## Results format
-Results to evaluate are expected to be stored in JSON format for each scene such as illustrated in *examples/experiences*, and to consist in a list of pose hypothesis described by a rigid transformation ("R", "t") and a confidence score "score".
+Results to evaluate are expected to be stored in JSON format for each scene such as illustrated in *examples/experiences*, and to consist in a list of pose hypotheses described by a rigid transformation ("R", "t") and a an arbitrary confidence score "score" used to rank them (the higher the score, the higher the confidence in the hypothese).
 Other format may be used by providing a proper overloading the *_load_results_list* and *_results_file_extension* variables contained in *evaluation_tools.py*.
 
 ## Dependencies
